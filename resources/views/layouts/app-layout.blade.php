@@ -18,7 +18,7 @@
         <x-employee-navigation :user="$user" />
     @endif
 
-    <div class="w-full px-3 py-2 text-xl font-semibold bg-white shadow sm:px-6 lg:px-16">
+    <div class="w-full p-3 text-xl font-semibold bg-white shadow sm:px-6 lg:px-16">
         Absensi
     </div>
 

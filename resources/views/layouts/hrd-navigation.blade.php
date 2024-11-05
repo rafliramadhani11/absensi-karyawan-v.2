@@ -32,11 +32,11 @@
                 <hr class="my-2">
                 <div class="lg:hidden">
                     <x-dropdown-link>
-                        <x-icon.absensi class="mr-2 size-4" />
+                        <x-icons.absensi class="mr-2 size-4" />
                         Data Absensi
                     </x-dropdown-link>
                     <x-dropdown-link>
-                        <x-icon.penggajian class="mr-2 size-4" />
+                        <x-icons.penggajian class="mr-2 size-4" />
                         Penggajian
                     </x-dropdown-link>
                 </div>
@@ -44,7 +44,7 @@
                 <hr class="my-2 lg:hidden">
 
                 <x-dropdown-link>
-                    <x-icon.profile class="mr-2 size-4" />
+                    <x-icons.profile class="mr-2 size-4" />
                     Profile
                 </x-dropdown-link>
 
@@ -81,12 +81,12 @@
         class="absolute left-0 right-0 overflow-hidden bg-white shadow sm:hidden top-16">
 
         <x-mobile-menu-link>
-            <x-icon.absensi class="mr-3 size-5" />
+            <x-icons.absensi class="mr-3 size-5" />
             Data Absensi
         </x-mobile-menu-link>
 
         <x-mobile-menu-link>
-            <x-icon.penggajian class="mr-3 size-5" />
+            <x-icons.penggajian class="mr-3 size-5" />
             Penggajian
         </x-mobile-menu-link>
 
@@ -100,7 +100,7 @@
         </div>
 
         <x-mobile-menu-link>
-            <x-icon.profile class="mr-3 size-5" />
+            <x-icons.profile class="mr-3 size-5" />
             Profile
         </x-mobile-menu-link>
 

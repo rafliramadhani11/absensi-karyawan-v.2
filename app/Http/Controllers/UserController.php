@@ -9,6 +9,7 @@ class UserController extends Controller
     public function index()
     {
         $user = Auth::user();
+
         switch ($user->role) {
             case 'Admin':
                 return view('admin.app', compact('user'));

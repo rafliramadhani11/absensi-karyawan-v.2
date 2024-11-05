@@ -29,7 +29,7 @@
                 <hr class="my-2">
                 <div class="lg:hidden">
                     <x-dropdown-link>
-                        <x-icon.qrqode class="mr-2 size-4" />
+                        <x-icons.qrqode class="mr-2 size-4" />
                         Qr Qode
                     </x-dropdown-link>
                 </div>
@@ -37,7 +37,7 @@
                 <hr class="my-2 lg:hidden">
 
                 <x-dropdown-link>
-                    <x-icon.profile class="mr-2 size-4" />
+                    <x-icons.profile class="mr-2 size-4" />
                     Profile
                 </x-dropdown-link>
 
@@ -75,7 +75,7 @@
 
 
         <x-mobile-menu-link>
-            <x-icon.qrqode class="mr-3 size-5" />
+            <x-icons.qrqode class="mr-3 size-5" />
             Qr Qode
         </x-mobile-menu-link>
 
@@ -87,7 +87,7 @@
         </div>
 
         <x-mobile-menu-link>
-            <x-icon.profile class="mr-3 size-5" />
+            <x-icosn.profile class="mr-3 size-5" />
             Profile
         </x-mobile-menu-link>
 
