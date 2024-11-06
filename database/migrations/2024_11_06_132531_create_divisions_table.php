@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attendances', function (Blueprint $table) {
+        Schema::create('divisions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('position_id')->constrained();
 
-            $table->enum('type', ['hadir', 'tidak hadir', 'izin']);
-            $table->timestamp('checkin')->nullable();
-            $table->timestamp('checkout')->nullable();
-            $table->text('reason')->nullable();
-
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attendances');
+        Schema::dropIfExists('divisions');
     }
 };

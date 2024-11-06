@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+        .page-break {
+            page-break-after: always;
+        }
+    </style>
 </head>
 
 <body class="antialiased bg-gray-100">

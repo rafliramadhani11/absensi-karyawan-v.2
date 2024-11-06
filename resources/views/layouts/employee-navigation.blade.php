@@ -8,12 +8,13 @@
         <div x-data="{ showDropdown: false }" class="hidden sm:flex sm:items-center ">
             <div class="mr-3 border-r-2 border-slate-300 lg:block sm:hidden">
 
-                <x-nav-link label="Data Absensi" />
+                <x-nav-link class="{{ Route::is('app') ? 'underline underline-offset-8 decoration-2' : '' }}"
+                    label="Data Absensi" />
                 <x-nav-link label="Penggajian" />
 
             </div>
 
-            <button @click="showDropdown = !showDropdown" class="flex items-center text-sm">
+            <button @click="showDropdown = !showDropdown" class="flex items-center text-sm font-semibold">
                 {{ $user->fullname }}
                 <x-icons.arrow-down />
             </button>
@@ -76,12 +77,13 @@
 
     {{-- MOBILE MENU --}}
     <div x-show="open" x-cloak x-transition:enter="transition duration-300"
-    x-transition:enter-start="opacity-0 -translate-y-6" x-transition:enter-end="opacity-100 "
+        x-transition:enter-start="opacity-0 -translate-y-6" x-transition:enter-end="opacity-100 "
         x-transition:leave="transition  duration-300" x-transition:leave-start="opacity-100 "
         x-transition:leave-end="opacity-0 -translate-y-6"
         class="absolute left-0 right-0 z-50 overflow-hidden bg-white shadow sm:hidden top-16">
 
-        <x-mobile-menu-link>
+        <x-mobile-menu-link wire:navigate href="{{ route('app') }}"
+            class="{{ Route::is('app') ? 'bg-slate-200' : '' }}">
             <x-icons.absensi class="mr-3 size-5" />
             Data Absensi
         </x-mobile-menu-link>
@@ -102,7 +104,8 @@
             </span>
         </div>
 
-        <x-mobile-menu-link>
+        <x-mobile-menu-link class="{{ Route::is('profile') ? 'bg-slate-200' : '' }}" wire:navigate
+            href="{{ route('profile', $user->username) }}">
             <x-icons.profile class="mr-3 size-5" />
             Profile
         </x-mobile-menu-link>
@@ -116,7 +119,6 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
                 </svg>
-
                 Sign Out</button>
         </form>
 

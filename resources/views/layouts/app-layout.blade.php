@@ -18,9 +18,11 @@
         <x-employee-navigation :user="$user" />
     @endif
 
-    <div class="w-full p-3 text-xl font-semibold bg-white shadow sm:px-6 lg:px-16">
-        Absensi
-    </div>
+    @if (isset($header))
+        <div class="w-full p-3 text-xl font-semibold bg-white shadow sm:px-6 lg:px-16">
+            {{ $header }}
+        </div>
+    @endif
 
     <main class="px-3 py-5 sm:px-6 lg:mx-10">
         {{ $slot }}

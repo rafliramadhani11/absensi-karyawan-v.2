@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
         Position::factory()->create(['name' => 'Anggota']);
         Division::factory(5)->create();
         User::factory(5)->create();
-        Attendance::factory(50)->create();
+        Attendance::factory(10)->create();
     }
 }
