@@ -12,7 +12,7 @@ class Division extends Model
     /** @use HasFactory<\Database\Factories\DivisionFactory> */
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['position_id', 'name'];
 
     public function users(): HasMany
     {

@@ -15,5 +15,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('app', [UserController::class, 'index'])->name('app');
     Route::get('profile/{user}', [UserController::class, 'profile'])->name('profile');
-    Route::patch('profile/update/{user}', [UserController::class, 'profileUpdate'])->name('user.profile.update');
+    Route::patch('profile/{user}/update-information', [
+        UserController::class,
+        'personalInformationUpdate'
+    ])->name('personalInformation.update');
+    Route::patch('profile/{user}/update-password', [UserController::class, 'newPassword'])
+        ->name('password.update');
 });

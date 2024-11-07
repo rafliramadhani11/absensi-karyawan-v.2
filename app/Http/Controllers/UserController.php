@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Division;
+use App\Models\Position;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\PersonalInformationRequest;
+use App\Http\Requests\ResetPassword;
+use App\Rules\MatchCurrentPassword;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -26,14 +31,27 @@ class UserController extends Controller
 
     public function profile(User $user)
     {
-        $divisions = Division::get();
-        return view('user.profile', compact('user', 'divisions'));
+        $positions = Position::where('id', '!=', $user->divisionPosition->id)->get();
+        $divisions = Division::where('id', '!=', $user->division->id)->get();
+
+        return view('user.profile', compact('user', 'divisions', 'positions'));
     }
 
-    public function profileUpdate(PersonalInformationRequest $request, User $user): RedirectResponse
+    public function personalInformationUpdate(PersonalInformationRequest $request, User $user): RedirectResponse
     {
         $validated = $request->validated();
         $user->update($validated);
+
+        return back();
+    }
+
+    public function newPassword(ResetPassword $request, User $user): RedirectResponse
+    {
+        $validated = $request->validated();
+        $user->update([
+            'password' => Hash::make($validated['password'])
+        ]);
+
         return back();
     }
 }
