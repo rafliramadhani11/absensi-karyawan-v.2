@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Division;
 use App\Models\Position;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\PersonalInformationRequest;
-use App\Http\Requests\ResetPassword;
-use App\Rules\MatchCurrentPassword;
+use App\Http\Requests\ResetPasswordRequest;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -45,7 +43,7 @@ class UserController extends Controller
         return back();
     }
 
-    public function newPassword(ResetPassword $request, User $user): RedirectResponse
+    public function newPassword(ResetPasswordRequest $request, User $user): RedirectResponse
     {
         $validated = $request->validated();
         $user->update([
